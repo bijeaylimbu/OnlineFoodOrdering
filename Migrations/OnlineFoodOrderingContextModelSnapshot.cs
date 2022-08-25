@@ -50,15 +50,15 @@ namespace OnlineFoodOrdering.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1ae9d263-5078-488d-8ba2-8de813652a12",
-                            ConcurrencyStamp = "8aaa4b27-7bd0-4c05-be10-7c303a8571ea",
+                            Id = "72ab23be-c964-41dd-8e53-aa8f1f8e3e87",
+                            ConcurrencyStamp = "723664fb-8d2c-4909-8fe2-73f01c8c175a",
                             Name = "Viewer",
                             NormalizedName = "VIEWER"
                         },
                         new
                         {
-                            Id = "3ed2ecee-aeda-4120-bb97-23cfe0a1ad36",
-                            ConcurrencyStamp = "e8d907a4-a056-4061-acba-b85733fb97a2",
+                            Id = "949613ed-0d37-4e7f-84a2-8f93361dc460",
+                            ConcurrencyStamp = "638ba984-dc7b-482e-9cfb-47588e8a9919",
                             Name = "Administrator",
                             NormalizedName = "ASMINISTRATOR"
                         });
@@ -244,6 +244,54 @@ namespace OnlineFoodOrdering.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("OnlineFoodOrdering.Model.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("OnlineFoodOrdering.Model.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

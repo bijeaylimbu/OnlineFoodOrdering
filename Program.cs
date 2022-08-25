@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<OnlineFoodOrderingDBContext>(options =>
     options.UseNpgsql(connectionString));
+builder.Services.AddCors();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
         options =>
@@ -35,9 +36,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UseAuthorization();
-app.UseCors();
 app.MapControllers();
 
 app.Run();

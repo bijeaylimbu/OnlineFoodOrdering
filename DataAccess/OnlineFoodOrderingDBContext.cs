@@ -11,8 +11,10 @@ public class OnlineFoodOrderingDBContext : IdentityDbContext<ApplicationUser>
     public OnlineFoodOrderingDBContext(DbContextOptions<OnlineFoodOrderingDBContext> options) 
         : base(options)
     {
+        
     }
-    // public DbSet<Registration> Registration { get; set; }
+    public DbSet<Product> Product{ get; set; }
+    public DbSet<Category> Category { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

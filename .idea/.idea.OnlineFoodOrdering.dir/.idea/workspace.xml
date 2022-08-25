@@ -5,7 +5,28 @@
     <projectFile profileName="OnlineFoodOrdering">OnlineFoodOrdering.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="" />
+    <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Controllers/CategoryController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ProductController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/Category.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/FoodCategories.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a/storage_v2/_src_/database/online_food_ordering.qc8xrA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a/storage_v2/_src_/database/online_food_ordering.qc8xrA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/OnlineFoodOrderingDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/OnlineFoodOrderingDBContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/OnlineFoodOrderingContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/OnlineFoodOrderingContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,22 +50,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderNuGetOptionsPageId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;RiderNuGetOptionsPageId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.OnlineFoodOrdering">
     <configuration name="OnlineFoodOrdering" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/OnlineFoodOrdering.csproj" />
@@ -101,8 +122,20 @@
       <workItem from="1661197357438" duration="4761000" />
       <workItem from="1661259507701" duration="10283000" />
       <workItem from="1661338887673" duration="4856000" />
-      <workItem from="1661349709837" duration="1366000" />
+      <workItem from="1661349709837" duration="2285000" />
+      <workItem from="1661352047345" duration="548000" />
+      <workItem from="1661374655378" duration="1382000" />
+      <workItem from="1661417742762" duration="2244000" />
+      <workItem from="1661461999952" duration="7002000" />
     </task>
+    <task id="LOCAL-00001" summary="add pushed">
+      <created>1661351112229</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661351112229</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,5 +156,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="add pushed" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pushed" />
   </component>
 </project>
