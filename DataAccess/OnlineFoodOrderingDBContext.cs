@@ -15,6 +15,7 @@ public class OnlineFoodOrderingDBContext : IdentityDbContext<ApplicationUser>
     }
     public DbSet<Product> Product{ get; set; }
     public DbSet<Category> Category { get; set; }
+    public DbSet<CartItem> Cart { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

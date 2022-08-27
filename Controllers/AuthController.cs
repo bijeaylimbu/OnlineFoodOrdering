@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OnlineFoodOrdering.Interfaces;
 using OnlineFoodOrdering.Model;
@@ -7,38 +8,50 @@ namespace OnlineFoodOrdering.Controllers;
 [ApiController]
 public class AuthController: ControllerBase
 {
-    IAuthRepository registrationRepository;
+    IAuthRepository authRepository;
 
     public AuthController(IAuthRepository _registrationRepository)
     {
-       registrationRepository = _registrationRepository;
+       authRepository = _registrationRepository;
     } 
     [HttpPost]
     [Route("registration")]
-   public async Task<IActionResult> Register([FromBody] Registration registration)
+   public async Task<int> Register([FromBody] Registration registration)
    {
-      var result = await registrationRepository.NewRegistration(registration);
+      var result = await authRepository.NewRegistration(registration);
       if (result.Succeeded)
       {
-         return Ok(result.Succeeded);
+         return StatusCodes.Status201Created;
       }
 
-      return BadRequest("sorry cannot register");
+      return StatusCodes.Status501NotImplemented;
    }
 
    [HttpPost]
    [Route("login")]
    public async Task<IActionResult> Login([FromBody] Login login)
    {
-      // var existingUser = await onlineFoodOrderingDbContext.Registration.FirstOrDefaultAsync(x => x.Email ==login.Email );
-      //    if (existingUser == null)
-      //       return BadRequest("email doesn't exit");
-         var result = await registrationRepository.LoginAsync(login);
-         if (string.IsNullOrEmpty(result))
-         {
-            return Unauthorized();
-         }
-   
-         return Ok(result);
+      var result = await authRepository.LoginAsync(login);
+      if (string.IsNullOrEmpty(result.ToString()))
+      {
+         return StatusCode(400);  
       }
+      return Ok(result);
+      }
+
+   [HttpGet]
+   [Route("all-user")]
+   public async Task<List<ApplicationUser>> GetAllUser()
+   {
+      var user = await authRepository.GetAllUserAsync();
+      return user;
+   }
+   
+   [HttpPut]
+   [Route("updated-user")]
+   public async Task<int> UpdateUserAsync(string id, [FromBody] ApplicationUser applicationUser)
+   {
+      var user = await authRepository.UpdateUserAsync(id, applicationUser);
+      return user;
+   }
 }

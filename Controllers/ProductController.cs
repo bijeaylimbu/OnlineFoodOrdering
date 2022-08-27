@@ -58,7 +58,7 @@ public class ProductController
     public async Task<List<Product>> GetAllProduct()
     {
 
-        List<Product> product = await context.Product.ToListAsync();
+        List<Product> product = await context.Product.OrderBy(x=>x.Id).ToListAsync();
         return product;
     }
     [HttpDelete]
@@ -74,6 +74,26 @@ public class ProductController
          context.Product.Remove(product);
          await context.SaveChangesAsync();
 
+        return StatusCodes.Status202Accepted;
+    }
+    
+    [HttpPut]
+    [Route("updated-product")]
+    public async Task<int> UpdateProductAsync(int id, [FromBody]Product productModel)
+    {
+        var product = await context.Product.FindAsync(id);
+        if (product == null)
+        {
+            return StatusCodes.Status302Found;
+        }
+
+        product.ProductName = productModel.ProductName;
+        product.Price = productModel.Price;
+        product.Image = productModel.Image;
+        product.Quantity = productModel.Quantity;
+        product.Category = productModel.Category;
+        context.Product.Update(product);
+        await context.SaveChangesAsync();
         return StatusCodes.Status202Accepted;
     }
 }

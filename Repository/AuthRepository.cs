@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OnlineFoodOrdering.DataAccess;
 using OnlineFoodOrdering.Interfaces;
 using OnlineFoodOrdering.Model;
@@ -32,14 +34,38 @@ public class AuthRepository: IAuthRepository
         return await userManager.CreateAsync(user, registration.Password);
     }
 
-    public async Task<string> LoginAsync(Login login)
+    public async Task<ApplicationUser> LoginAsync(Login login)
     {
         var result = await signInManager.PasswordSignInAsync(login.Email, login.Password, false, false);
         if (!result.Succeeded)
         {
             return null;
         }
-    
-        return "Success";
+
+        var user = userManager.FindByEmailAsync(login.Email);
+        return await user;
+    }
+
+    public async Task<List<ApplicationUser>> GetAllUserAsync()
+    {
+        var user = await userManager.Users.OrderBy(x=>x.Id).ToListAsync();
+        return user;
+    }
+
+    public async Task<int> UpdateUserAsync(string id, ApplicationUser userModel)
+    {
+        var user = await userManager.FindByEmailAsync(id);
+        if (user == null)
+        {
+            return StatusCodes.Status302Found;
+        }
+
+        user.FirstName = userModel.FirstName;
+        user.LastName = userModel.LastName;
+        user.Role = userModel.Role;
+        user.Email = userModel.Email;
+        user.PasswordHash = user.PasswordHash;
+        await userManager.UpdateAsync(user);
+        return StatusCodes.Status202Accepted;
     }
 }

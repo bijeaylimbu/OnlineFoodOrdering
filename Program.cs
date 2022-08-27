@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<OnlineFoodOrderingDBContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(connectionString),ServiceLifetime.Transient);
 builder.Services.AddCors();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(

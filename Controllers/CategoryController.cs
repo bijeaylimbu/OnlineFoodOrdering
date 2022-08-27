@@ -36,7 +36,7 @@ public class CategoryController
     public async Task<List<Category>> GetAllCategory()
     {
 
-        List<Category> category = await context.Category.ToListAsync();
+        List<Category> category = await context.Category.OrderBy(x=>x.Id).ToListAsync();
         return category;
     }
     [HttpDelete]
@@ -54,4 +54,20 @@ public class CategoryController
 
         return StatusCodes.Status202Accepted;
     }
+
+    [HttpPut]
+    [Route("updated-category")]
+    public async Task<int> UpdateCategoryAsync(int id, [FromBody]Category categoryModel)
+    {
+        var category = await context.Category.FindAsync(id);
+        if (category == null)
+        {
+            return StatusCodes.Status302Found;
+        }
+
+        category.Name = categoryModel.Name;
+            context.Category.Update(category);
+            await context.SaveChangesAsync();
+            return StatusCodes.Status202Accepted;
+        }
 }

@@ -49,3 +49,6 @@
 /media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering/bin/Debug/net6.0/Frontend/online_food_ordering/package-lock.json
+/media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering/bin/Debug/net6.0/Frontend/online_food_ordering/package.json
+/media/bijay/a2f0e4f0-5adf-436e-9734-5e89ead378bc8/dotnet/OnlineFoodOrdering/bin/Debug/net6.0/Frontend/online_food_ordering/public/manifest.json
