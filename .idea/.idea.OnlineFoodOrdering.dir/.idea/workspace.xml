@@ -5,45 +5,8 @@
     <projectFile profileName="OnlineFoodOrdering">OnlineFoodOrdering.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/CartController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/CartItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a/storage_v2/_src_/database/online_food_ordering.qc8xrA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a/storage_v2/_src_/database/online_food_ordering.qc8xrA/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="some change">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProductController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/OnlineFoodOrderingDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/OnlineFoodOrderingDBContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IAuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IAuthRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220822200645_RegistrationTable.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220822200645_RegistrationTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220823130850_changingTableName.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220823130850_changingTableName.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220823163715_addingApplicationUser.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220823163715_addingApplicationUser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220824120452_removingRegistration.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220824120452_removingRegistration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220824123110_addingRoles.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220824123110_addingRoles.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220825213905_addingProducts.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220825213905_addingProducts.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220825230129_addingCatogory.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220825230129_addingCatogory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/OnlineFoodOrderingContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineFoodOrdering.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineFoodOrdering.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/AuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AuthRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +114,7 @@
       <workItem from="1661469646959" duration="248000" />
       <workItem from="1661500495637" duration="9656000" />
       <workItem from="1661615258471" duration="3911000" />
-      <workItem from="1661628351379" duration="7618000" />
+      <workItem from="1661628351379" duration="7966000" />
     </task>
     <task id="LOCAL-00001" summary="add pushed">
       <created>1661351112229</created>
@@ -174,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661469792630</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="some change">
+      <created>1661644759742</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661644759742</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +168,7 @@
     <MESSAGE value="add pushed" />
     <MESSAGE value="adding all files" />
     <MESSAGE value="frontend part" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend part" />
+    <MESSAGE value="some change" />
+    <option name="LAST_COMMIT_MESSAGE" value="some change" />
   </component>
 </project>
