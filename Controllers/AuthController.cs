@@ -49,9 +49,18 @@ public class AuthController: ControllerBase
    
    [HttpPut]
    [Route("updated-user")]
-   public async Task<int> UpdateUserAsync(string id, [FromBody] ApplicationUser applicationUser)
+   public async Task<int> UpdateUserAsync(string email, [FromBody] ApplicationUser applicationUser)
    {
-      var user = await authRepository.UpdateUserAsync(id, applicationUser);
+      var user = await authRepository.UpdateUserAsync(email, applicationUser);
       return user;
    }
+   
+   
+   [HttpDelete]
+      [Route("delete-user")]
+      public async Task<int> DeleteUserAsync(string email)
+      {
+         var user = await authRepository.DeleteUserAsync(email);
+         return user;
+      }
 }

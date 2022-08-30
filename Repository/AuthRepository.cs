@@ -52,9 +52,9 @@ public class AuthRepository: IAuthRepository
         return user;
     }
 
-    public async Task<int> UpdateUserAsync(string id, ApplicationUser userModel)
+    public async Task<int> UpdateUserAsync(string email, ApplicationUser userModel)
     {
-        var user = await userManager.FindByEmailAsync(id);
+        var user = await userManager.FindByEmailAsync(email);
         if (user == null)
         {
             return StatusCodes.Status302Found;
@@ -66,6 +66,18 @@ public class AuthRepository: IAuthRepository
         user.Email = userModel.Email;
         user.PasswordHash = user.PasswordHash;
         await userManager.UpdateAsync(user);
+        return StatusCodes.Status202Accepted;
+    }
+
+    public async Task<int> DeleteUserAsync(string email)
+    {
+        if (email == null)
+        {
+            return StatusCodes.Status302Found;
+        }
+
+        var user = await userManager.FindByEmailAsync(email);
+        await userManager.DeleteAsync(user);
         return StatusCodes.Status202Accepted;
     }
 }

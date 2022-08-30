@@ -11,5 +11,7 @@ public interface IAuthRepository
 
     Task<List<ApplicationUser>> GetAllUserAsync();
 
-    Task<int> UpdateUserAsync(string id, ApplicationUser userModel);
+    Task<int> UpdateUserAsync(string email, ApplicationUser userModel);
+    
+    Task<int> DeleteUserAsync(string email);
 }
