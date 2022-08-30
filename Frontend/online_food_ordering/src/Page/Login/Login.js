@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 async function loginUser(credentials) {
+
   return fetch("https://localhost:7288/api/login", {
     method: 'POST',
     headers: {
@@ -43,9 +45,11 @@ async function loginUser(credentials) {
     body: JSON.stringify(credentials)
   })
     .then(res => res.json())
-    .then(result=>{
-      window.sessionStorage.setItem("email", result.email);
-      window.sessionStorage.setItem("role", result.role)
+    .then(result => {
+      if (result.email != null) {
+        window.sessionStorage.setItem("email", result.email);
+        window.sessionStorage.setItem("role", result.role);
+      }
     })
 }
 
@@ -53,14 +57,14 @@ export default function Login() {
   const classes = useStyles();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
+  const navigate = useNavigate();
   const handleLogin = async e => {
     e.preventDefault();
     const response = await loginUser({
       email,
       password
     });
-
+    navigate("/");
   }
   return (
     <Grid container className={classes.root}>
