@@ -14,7 +14,7 @@ public class CategoryController
         context = _context;
     }
     [HttpPost]
-    [Route("add-category")]
+    [Route("api/add-category")]
     public async Task<int> AddCategory([FromBody]Category categoryData)
     {
         try
@@ -32,7 +32,7 @@ public class CategoryController
     }
     
     [HttpGet]
-    [Route("get-all-category")]
+    [Route("api/get-all-category")]
     public async Task<List<Category>> GetAllCategory()
     {
 
@@ -40,7 +40,7 @@ public class CategoryController
         return category;
     }
     [HttpDelete]
-    [Route("delete-category")]
+    [Route("api/delete-category")]
     public async Task<int> DeleteCategoryById(int categoryId)
     {
         if (categoryId == null)
@@ -56,7 +56,7 @@ public class CategoryController
     }
 
     [HttpPut]
-    [Route("updated-category")]
+    [Route("api/updated-category")]
     public async Task<int> UpdateCategoryAsync(int id, [FromBody]Category categoryModel)
     {
         var category = await context.Category.FindAsync(id);

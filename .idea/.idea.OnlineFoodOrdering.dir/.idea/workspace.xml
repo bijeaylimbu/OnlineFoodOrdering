@@ -6,11 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IAuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IAuthRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/AuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AuthRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CategoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
@@ -34,7 +33,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da6fb3ce147f43478b73b0544caafff71ce200/5f/8ee25685/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DataAccess/OnlineFoodOrderingDBContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Frontend/online_food_ordering/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -132,7 +130,10 @@
       <workItem from="1661628351379" duration="9088000" />
       <workItem from="1661688219389" duration="3511000" />
       <workItem from="1661737594048" duration="6004000" />
-      <workItem from="1661852957274" duration="3280000" />
+      <workItem from="1661852957274" duration="3449000" />
+      <workItem from="1661897457761" duration="1035000" />
+      <workItem from="1661978783157" duration="49000" />
+      <workItem from="1661980264226" duration="2662000" />
     </task>
     <task id="LOCAL-00001" summary="add pushed">
       <created>1661351112229</created>
@@ -169,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661645235909</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adding more">
+      <created>1661862435993</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661862435993</updated>
+    </task>
+    <task id="LOCAL-00007" summary="working on">
+      <created>1661862589884</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661862589884</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +210,8 @@
     <MESSAGE value="frontend part" />
     <MESSAGE value="some change" />
     <MESSAGE value="remaining push" />
-    <option name="LAST_COMMIT_MESSAGE" value="remaining push" />
+    <MESSAGE value="adding more" />
+    <MESSAGE value="working on" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on" />
   </component>
 </project>
