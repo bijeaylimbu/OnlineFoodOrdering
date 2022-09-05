@@ -50,15 +50,15 @@ namespace OnlineFoodOrdering.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "38d70dba-fbcf-44d1-9713-8336fa07c5d6",
-                            ConcurrencyStamp = "cd730219-796b-47ee-9e07-46f52d07bc70",
+                            Id = "b57093d7-55af-4a8c-8068-d71d8f286260",
+                            ConcurrencyStamp = "e7c7db1e-750a-4282-b694-e17c02dabbb3",
                             Name = "Viewer",
                             NormalizedName = "VIEWER"
                         },
                         new
                         {
-                            Id = "66da4288-5e22-4a68-af21-38b77edbe6c2",
-                            ConcurrencyStamp = "d470cc6f-4e7b-4630-809c-dd4dc337d658",
+                            Id = "f6ed98b0-33dd-4f99-808b-c4c90a39755c",
+                            ConcurrencyStamp = "9772b504-607c-4d6c-bb25-aa0de9cbebbf",
                             Name = "Administrator",
                             NormalizedName = "ASMINISTRATOR"
                         });
@@ -254,15 +254,26 @@ namespace OnlineFoodOrdering.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("integer");
+
                     b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
                     b.Property<string>("User")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("quantity")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

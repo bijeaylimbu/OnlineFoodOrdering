@@ -1,6 +1,4 @@
 import * as React from 'react';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -16,10 +14,20 @@ import Grid from '@mui/material/Grid';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { useState } from 'react';
+import style from "../HomePage/HomePage.scss";
+import ProductCard from './ProductCard';
 export default function HomePage() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [products, setProducts] = React.useState([]);
   const navigate = useNavigate();
+  const [productId, setProductId] = React.useState();
+  const [quantity, setQuantity] = React.useState();
+  const [price, setPrice] = React.useState();
+  const [image, setImage] = React.useState();
+  const [isAdded, setIsAdded] = useState();
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -44,9 +52,23 @@ export default function HomePage() {
     sessionStorage.removeItem('role');
     navigate("/");
   };
+
+  const addToCart = (e) => {
+    e.preventDefault();
+    const response = axios.post("https://localhost:7288/api/add-cart ", {
+      user: sessionStorage.getItem("email"),
+      productId: productId,
+      quantity: quantity,
+      price: price,
+      image: image,
+    }
+    )
+    setIsAdded(true)
+    // window.location.reload();
+  }
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography variant="h6" noWrap component="div" sx={{ mr: 2 }}>
@@ -92,16 +114,35 @@ export default function HomePage() {
                       onClose={handleCloseUserMenu}
                     >
                       <MenuItem onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center"> Profile</Typography>
+                        <Link to="/user-profile" style={{ textDecoration: 'none', color: "black" }}>
+                          <Typography textAlign="center"> Profile</Typography>
+                        </Link>
                       </MenuItem>
                       <MenuItem onClick={handleCloseUserMenu}>
                         <Typography textAlign="center"> Dashboard</Typography>
                       </MenuItem>
-                      <Link to="/all-user">
                       <MenuItem onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center"> Manage User</Typography>
+                        <Link to="/all-user" style={{ textDecoration: 'none', color: "black" }}>
+                          <Typography textAlign="center"> Manage User</Typography>
+                        </Link>
                       </MenuItem>
-                      </Link>
+
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <Link to="/manage-product" style={{ textDecoration: 'none', color: "black" }}>
+                          <Typography textAlign="center"> Manage Product</Typography>
+                        </Link>
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <Link to="/manage-category" style={{ textDecoration: 'none', color: "black" }}>
+                          <Typography textAlign="center"> Manage Category</Typography>
+                        </Link>
+                      </MenuItem>
+
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <Link to="/manage-cart" style={{ textDecoration: 'none', color: "black" }}>
+                          <Typography textAlign="center"> Cart</Typography>
+                        </Link>
+                      </MenuItem>
                       <MenuItem onClick={handleCloseUserMenu}>
                         <Typography textAlign="center" onClick={logout}> Log Out</Typography>
                       </MenuItem>
@@ -126,26 +167,10 @@ export default function HomePage() {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {products &&
-            products.map((product) => (
-              <>
-                <Grid item xs={2} sm={4} md={4} key={product.id}>
-                  <CardMedia
-                    component="img"
-                    height="194"
-                    image={product.image}
-                  />
-                  <CardHeader
-                    action={
-                      <IconButton aria-label="settings">
-                      </IconButton>
-                    }
-                    title={product.productName}
-                  />
-                  <center>  <AddShoppingCartIcon /></center>
-
-                </Grid>
-              </>
-            ))
+            products.map((product) => {
+              return <ProductCard data={product} />
+            }
+            )
           }
         </Grid>
       </Box>

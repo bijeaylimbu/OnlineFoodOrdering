@@ -21,7 +21,10 @@ public class CartController
         CartItem cartItem = new CartItem();
         cartItem.ProductId = cartModel.ProductId;
         cartItem.User = cartModel.User;
-        cartItem.quantity = cartModel.quantity;
+        cartItem.Price = cartModel.Price;
+        cartItem.Quantity = cartModel.Quantity;
+        cartItem.Image = cartModel.Image;
+        cartItem.ProductName = cartModel.ProductName;
         context.Add(cartItem);
         await context.SaveChangesAsync();
         return StatusCodes.Status201Created;
@@ -47,14 +50,14 @@ public class CartController
     
     [HttpGet]
     [Route("get-all-cart")]
-    public async Task<CartItem?> GetaAllCartItemByEmail(string email)
+    public async Task<List<CartItem>> GetaAllCartItemByEmail(string email)
     {
         if (email == null)
         {
             return null;
         }
 
-        var cart = await context.Cart.FirstOrDefaultAsync(x => x.User == email);
+        var cart = context.Cart.Where(x => x.User == email).ToList();
         return cart;
     }
     
@@ -68,7 +71,7 @@ public class CartController
             return StatusCodes.Status302Found;
         }
 
-        cart.Quantity = cartItemModel.quantity;
+        cart.Quantity = cartItemModel.Quantity;
         context.Product.Update(cart);
         await context.SaveChangesAsync();
         return StatusCodes.Status202Accepted;
