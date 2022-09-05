@@ -5,28 +5,11 @@
     <projectFile profileName="OnlineFoodOrdering">OnlineFoodOrdering.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CartController.cs" afterDir="false" />
+    <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="adding ProductName in model">
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/HomePage.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageUser/ManageUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageUser/ManageUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/OnlineFoodOrderingDBContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/OnlineFoodOrderingDBContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/CartItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Model/CartItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +126,7 @@
       <workItem from="1661978783157" duration="49000" />
       <workItem from="1661980264226" duration="3582000" />
       <workItem from="1662162939041" duration="4817000" />
-      <workItem from="1662392092101" duration="2824000" />
+      <workItem from="1662392092101" duration="3522000" />
     </task>
     <task id="LOCAL-00001" summary="add pushed">
       <created>1661351112229</created>
@@ -201,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661993429961</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adding ProductName in model">
+      <created>1662399930032</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1662399930032</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +220,7 @@
     <MESSAGE value="adding more" />
     <MESSAGE value="working on" />
     <MESSAGE value="wrking" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrking" />
+    <MESSAGE value="adding ProductName in model" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding ProductName in model" />
   </component>
 </project>
