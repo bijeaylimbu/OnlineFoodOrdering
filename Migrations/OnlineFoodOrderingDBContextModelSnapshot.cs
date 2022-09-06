@@ -50,15 +50,15 @@ namespace OnlineFoodOrdering.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b57093d7-55af-4a8c-8068-d71d8f286260",
-                            ConcurrencyStamp = "e7c7db1e-750a-4282-b694-e17c02dabbb3",
+                            Id = "fb50a645-cd53-43fa-bfd3-3a3c70d69cbe",
+                            ConcurrencyStamp = "b05ed1f6-a048-468d-90e7-c5e5e153092f",
                             Name = "Viewer",
                             NormalizedName = "VIEWER"
                         },
                         new
                         {
-                            Id = "f6ed98b0-33dd-4f99-808b-c4c90a39755c",
-                            ConcurrencyStamp = "9772b504-607c-4d6c-bb25-aa0de9cbebbf",
+                            Id = "e0f0532a-a964-4d54-83e7-6a3f9e7d03b5",
+                            ConcurrencyStamp = "25bd9f0f-c492-40b0-92fd-06a8a969778d",
                             Name = "Administrator",
                             NormalizedName = "ASMINISTRATOR"
                         });

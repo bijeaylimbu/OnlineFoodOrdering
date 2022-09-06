@@ -12,6 +12,7 @@ import ManageUser from './Page/ManageUser/ManageUser';
 import UserProfile from './Page/UserProfile/UserProfile';
 import ManageProduct from './Page/ManageProduct/ManageProduct';
 import ManageCategory from './Page/ManageCategory/ManageCategory';
+import ManageCart from './Page/ManageCart/ManageCart';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/user-profile" element={<UserProfile/>}/>
           <Route path="/manage-product" element={<ManageProduct/>}/>
           <Route path="/manage-category" element={<ManageCategory/>}/>
+          <Route path="/manage-cart" element={<ManageCart/>}/>
         </Routes>
       </BrowserRouter>
     </div>
