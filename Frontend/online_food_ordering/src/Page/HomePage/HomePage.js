@@ -48,15 +48,15 @@ export default function HomePage() {
   }, [])
 
   const logout = () => {
-    sessionStorage.removeItem('email');
-    sessionStorage.removeItem('role');
+    localStorage.removeItem('email');
+    localStorage.removeItem('role');
     navigate("/");
   };
 
   const addToCart = (e) => {
     e.preventDefault();
     const response = axios.post("https://localhost:7288/api/add-cart ", {
-      user: sessionStorage.getItem("email"),
+      user: localStorage.getItem("email"),
       productId: productId,
       quantity: quantity,
       price: price,
@@ -88,13 +88,13 @@ export default function HomePage() {
               </Box>
             </Box>
             {
-              (window.sessionStorage.getItem("email") !== null && window.sessionStorage.getItem("email") !== undefined)
+              (window.localStorage.getItem("email") !== null && window.localStorage.getItem("email") !== undefined)
                 ?
                 <>
                   <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">
                       <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        <Avatar alt={sessionStorage.getItem("email")} />
+                        <Avatar alt={localStorage.getItem("email")} />
                       </IconButton>
                     </Tooltip>
                     <Menu

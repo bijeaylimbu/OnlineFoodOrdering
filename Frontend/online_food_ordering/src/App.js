@@ -13,6 +13,8 @@ import UserProfile from './Page/UserProfile/UserProfile';
 import ManageProduct from './Page/ManageProduct/ManageProduct';
 import ManageCategory from './Page/ManageCategory/ManageCategory';
 import ManageCart from './Page/ManageCart/ManageCart';
+import PurchaseHistory from './Page/ManageCart/PurchaseHistory';
+import Payment from './Page/Payment/Payment';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/manage-product" element={<ManageProduct/>}/>
           <Route path="/manage-category" element={<ManageCategory/>}/>
           <Route path="/manage-cart" element={<ManageCart/>}/>
+          <Route path="/purchase-history" element={<PurchaseHistory/>}/>
+          <Route path="/payment" element={<Payment/>}/>
         </Routes>
       </BrowserRouter>
     </div>

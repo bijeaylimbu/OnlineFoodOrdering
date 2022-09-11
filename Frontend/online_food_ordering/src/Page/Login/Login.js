@@ -47,8 +47,8 @@ async function loginUser(credentials) {
     .then(res => res.json())
     .then(result => {
       if (result.email != null) {
-        window.sessionStorage.setItem("email", result.email);
-        window.sessionStorage.setItem("role", result.role);
+        window.localStorage.setItem("email", result.email);
+        window.localStorage.setItem("role", result.role);
       }
     })
 }

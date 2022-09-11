@@ -13,6 +13,7 @@ builder.Services.AddDbContext<OnlineFoodOrderingDBContext>(options =>
     options.UseNpgsql(connectionString),ServiceLifetime.Transient);
 builder.Services.AddCors();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
         options =>
         {

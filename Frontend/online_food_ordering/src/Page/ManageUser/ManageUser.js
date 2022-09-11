@@ -23,10 +23,10 @@ export default function ManageUser() {
   const [showCreateBtn, setShowCreateBtn] = useState(true);
   const [editing, setEdit] = useState(false);
   const [adding, setAdd] = useState(false);
-  const [firstName, setFirstName] = useState(sessionStorage.getItem("firstName"));
-  const [lastName, setLastName] = useState(sessionStorage.getItem("lastName"));
-  const [email, setEmail] = useState(sessionStorage.getItem("email"));
-  const [role, setRole] = useState(sessionStorage.getItem("role"));
+  const [firstName, setFirstName] = useState(localStorage.getItem("firstName"));
+  const [lastName, setLastName] = useState(localStorage.getItem("lastName"));
+  const [email, setEmail] = useState(localStorage.getItem("email"));
+  const [role, setRole] = useState(localStorage.getItem("role"));
   const [addFirstName, setAddFirstName] = useState();
   const [addLastName, setAddLastName] = useState();
   const [addEmail, setAddEmail] = useState();
@@ -161,10 +161,10 @@ export default function ManageUser() {
                             <Button
                               variant="info"
                               title="Edit user details"
-                              onClick={() => onEdit(window.sessionStorage.setItem("firstName", user.firstName),
-                                window.sessionStorage.setItem("lastName", user.lastName),
-                                window.sessionStorage.setItem("email", user.email),
-                                window.sessionStorage.setItem("role", user.role),
+                              onClick={() => onEdit(window.localStorage.setItem("firstName", user.firstName),
+                                window.localStorage.setItem("lastName", user.lastName),
+                                window.localStorage.setItem("email", user.email),
+                                window.localStorage.setItem("role", user.role),
                               )}
                             >
                               <FaPencilAlt />
@@ -204,7 +204,7 @@ export default function ManageUser() {
                           <Form.Control
                             type="text"
                             required
-                            defaultValue={sessionStorage.getItem("firstName")}
+                            defaultValue={localStorage.getItem("firstName")}
                             onChange={(e) =>
                               setFirstName(e.target.value)
                             }
@@ -216,7 +216,7 @@ export default function ManageUser() {
                           <Form.Control
                             type="text"
                             required
-                            defaultValue={sessionStorage.getItem("lastName")}
+                            defaultValue={localStorage.getItem("lastName")}
                             onChange={(e) =>
                               setLastName(e.target.value)
                             }
@@ -227,7 +227,7 @@ export default function ManageUser() {
                           <Form.Label>Email</Form.Label>
                           <Form.Control
                             type="text"
-                            defaultValue={sessionStorage.getItem("email")}
+                            defaultValue={localStorage.getItem("email")}
                             onChange={(e) =>
                               setEmail(e.target.value)
                             }
@@ -238,7 +238,7 @@ export default function ManageUser() {
                           <Form.Label>Role</Form.Label>
                           <Form.Control
                             type="text"
-                            defaultValue={sessionStorage.getItem("role")}
+                            defaultValue={localStorage.getItem("role")}
                             onChange={(e) =>
                               setRole(e.target.value)
                             }
@@ -250,7 +250,7 @@ export default function ManageUser() {
                         <Button variant="secondary" onClick={handleClose}>
                           Close
                         </Button>
-                        <Button variant="primary" type="submit" onClick={(e) => updateUser(sessionStorage.getItem("email"), e)}>
+                        <Button variant="primary" type="submit" onClick={(e) => updateUser(localStorage.getItem("email"), e)}>
                           Update
                         </Button>
                       </Modal.Footer>

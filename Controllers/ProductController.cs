@@ -26,6 +26,7 @@ public class ProductController
             product.Quantity = productData.Quantity;
             product.Category = productData.Category;
             product.Image = productData.Image;
+            product.Rating = productData.Rating;
             context.Add(product);
             await context.SaveChangesAsync();
         }
@@ -92,6 +93,7 @@ public class ProductController
         product.Image = productModel.Image;
         product.Quantity = productModel.Quantity;
         product.Category = productModel.Category;
+        product.Rating = productModel.Rating;
         context.Product.Update(product);
         await context.SaveChangesAsync();
         return StatusCodes.Status202Accepted;

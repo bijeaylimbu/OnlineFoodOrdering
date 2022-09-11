@@ -25,6 +25,9 @@ public class CartController
         cartItem.Quantity = cartModel.Quantity;
         cartItem.Image = cartModel.Image;
         cartItem.ProductName = cartModel.ProductName;
+         cartItem.AddedToCartDateTime=DateTime.Now;
+         cartItem.Delivery = cartModel.Delivery;
+         cartItem.Purchase = cartModel.Purchase;
         context.Add(cartItem);
         await context.SaveChangesAsync();
         return StatusCodes.Status201Created;
@@ -57,7 +60,7 @@ public class CartController
             return null;
         }
 
-        var cart = context.Cart.Where(x => x.User == email).ToList();
+        var cart = context.Cart.Where(x => x.User == email).OrderByDescending(x=>x.AddedToCartDateTime).ToList();
         return cart;
     }
     
@@ -65,14 +68,22 @@ public class CartController
     [Route("updated-cart-item")]
     public async Task<int> UpdateCartItemAsync(int id, [FromBody]CartItem cartItemModel)
     {
-        var cart = await context.Product.FindAsync(id);
+        var cart = await context.Cart.FindAsync(id);
         if (cart == null)
         {
             return StatusCodes.Status302Found;
         }
 
+        cart.User = cartItemModel.User;
+        cart.ProductId = cartItemModel.ProductId;
+        cart.ProductName = cartItemModel.ProductName;
+        cart.Price = cartItemModel.Price;
+        cart.Image = cartItemModel.Image;
+        cart.Purchase = cartItemModel.Purchase;
+        cart.Delivery = cartItemModel.Delivery;
         cart.Quantity = cartItemModel.Quantity;
-        context.Product.Update(cart);
+        cart.AddedToCartDateTime = cartItemModel.AddedToCartDateTime;
+        context.Cart.Update(cart);
         await context.SaveChangesAsync();
         return StatusCodes.Status202Accepted;
     }
@@ -86,8 +97,8 @@ public class CartController
             return StatusCodes.Status302Found;
         }
 
-        var cart = await context.Product.FirstOrDefaultAsync(x => x.Id == cartId);
-        context.Product.Remove(cart);
+        var cart = await context.Cart.FirstOrDefaultAsync(x => x.Id == cartId);
+        context.Cart.Remove(cart);
         await context.SaveChangesAsync();
 
         return StatusCodes.Status202Accepted;

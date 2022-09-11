@@ -50,15 +50,15 @@ namespace OnlineFoodOrdering.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fb50a645-cd53-43fa-bfd3-3a3c70d69cbe",
-                            ConcurrencyStamp = "b05ed1f6-a048-468d-90e7-c5e5e153092f",
+                            Id = "bd24161a-65e4-4731-be52-363da0acc34e",
+                            ConcurrencyStamp = "42b8bc32-82b3-4bfc-81e0-42a67996b5f0",
                             Name = "Viewer",
                             NormalizedName = "VIEWER"
                         },
                         new
                         {
-                            Id = "e0f0532a-a964-4d54-83e7-6a3f9e7d03b5",
-                            ConcurrencyStamp = "25bd9f0f-c492-40b0-92fd-06a8a969778d",
+                            Id = "5c65f8a5-1f25-4821-bf22-f105d3f0963d",
+                            ConcurrencyStamp = "df8b2285-7f4e-4878-9426-064ce1f900b6",
                             Name = "Administrator",
                             NormalizedName = "ASMINISTRATOR"
                         });
@@ -254,6 +254,13 @@ namespace OnlineFoodOrdering.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("AddedToCartDateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Delivery")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("text");
@@ -265,6 +272,10 @@ namespace OnlineFoodOrdering.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Purchase")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -321,6 +332,9 @@ namespace OnlineFoodOrdering.Migrations
                         .HasColumnType("text");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Rating")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

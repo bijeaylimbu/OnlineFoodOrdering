@@ -14,23 +14,32 @@ import { Toggle } from "rsuite";
 import { FaPencilAlt, FaPlus, FaTrashAlt } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 export default function ManageProduct() {
     const [products, setProducts] = useState([]);
     const [show, setShow] = useState(false);
     const [showCreateBtn, setShowCreateBtn] = useState(true);
     const [editing, setEdit] = useState(false);
     const [adding, setAdd] = useState(false);
-    const [productName, setProductName] = useState(sessionStorage.getItem("productName"));
-    const [price, setPrice] = useState(sessionStorage.getItem("price"));
-    const [image, setImage] = useState(sessionStorage.getItem("image"));
-    const [quantity, setQuantity] = useState(sessionStorage.getItem("quantity"));
-    const [category, setCategory] = useState(sessionStorage.getItem("category"));
+    const [productName, setProductName] = useState(localStorage.getItem("productName"));
+    const [price, setPrice] = useState(localStorage.getItem("price"));
+    const [image, setImage] = useState(localStorage.getItem("image"));
+    const [quantity, setQuantity] = useState(localStorage.getItem("quantity"));
+    const [category, setCategory] = useState(localStorage.getItem("category"));
     const [addProductName, setAddProductName] = useState();
     const [addPrice, setAddPrice] = useState();
     const [addImage, setAddImage] = useState();
     const [addQuantity, setAddQuantity] = useState();
-    const [addCategory, setAddCategory] = useState(sessionStorage.getItem("role"));
-
+    const [addCategory, setAddCategory] = useState('');
+    const [allCategory, setAllCategory] = useState();
+    const [rating, setRating] = useState(0);
+    const [error, setError] = useState([]);
+    console.log(addCategory)
     const handleClose = () => {
         setShow(false);
     };
@@ -60,8 +69,15 @@ export default function ManageProduct() {
         setProducts(response);
     }
 
+    const getCategory = async () => {
+        const response = await fetch("https://localhost:7288/api/get-all-category")
+            .then((response) => response.json());
+        setAllCategory(response);
+    }
+
     React.useState(() => {
         getData();
+        getCategory();
     }, [])
 
     const updateProduct = (id, e) => {
@@ -72,9 +88,9 @@ export default function ManageProduct() {
             price,
             image,
             quantity,
-            category
+            category,
+            rating
         })
-            .then(res => console.log(res));
     }
 
     const addProduct = (e) => {
@@ -85,9 +101,15 @@ export default function ManageProduct() {
             price: addPrice,
             image: addImage,
             quantity: addQuantity,
-            category: addCategory
+            category: addCategory,
+            rating: rating
+        }).then(response => {
+            if (response.data == 200) {
+                window.location.reload();
+            }
+        }).catch((error) => {
+            setError(error.response.data.errors)
         })
-        // window.location.reload();
     }
 
     const deleteProduct = (id) => {
@@ -96,6 +118,7 @@ export default function ManageProduct() {
         )
         window.location.reload();
     }
+
     return (
         <Container fluid="md">
             <Row>
@@ -154,12 +177,12 @@ export default function ManageProduct() {
                                                         variant="info"
                                                         title="Edit user details"
                                                         onClick={() =>
-                                                            onEdit(window.sessionStorage.setItem("productName", product.productName),
-                                                                window.sessionStorage.setItem("price", product.price),
-                                                                window.sessionStorage.setItem("image", product.image),
-                                                                window.sessionStorage.setItem("quantity", product.quantity),
-                                                                window.sessionStorage.setItem("category", product.category),
-                                                                window.sessionStorage.setItem("id", product.id)
+                                                            onEdit(window.localStorage.setItem("productName", product.productName),
+                                                                window.localStorage.setItem("price", product.price),
+                                                                window.localStorage.setItem("image", product.image),
+                                                                window.localStorage.setItem("quantity", product.quantity),
+                                                                window.localStorage.setItem("category", product.category),
+                                                                window.localStorage.setItem("id", product.id)
                                                             )}
                                                     >
                                                         <FaPencilAlt />
@@ -198,8 +221,8 @@ export default function ManageProduct() {
                                                 <Form.Label>Product Name</Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    required
-                                                    defaultValue={sessionStorage.getItem("productName")}
+
+                                                    defaultValue={localStorage.getItem("productName")}
                                                     onChange={(e) =>
                                                         setProductName(e.target.value)
                                                     }
@@ -210,8 +233,8 @@ export default function ManageProduct() {
                                                 <Form.Label>Price</Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    required
-                                                    defaultValue={sessionStorage.getItem("price")}
+
+                                                    defaultValue={localStorage.getItem("price")}
                                                     onChange={(e) =>
                                                         setPrice(e.target.value)
                                                     }
@@ -222,7 +245,8 @@ export default function ManageProduct() {
                                                 <Form.Label>Image</Form.Label>
                                                 <Form.Control
                                                     type="text"
-                                                    defaultValue={sessionStorage.getItem("image")}
+
+                                                    defaultValue={localStorage.getItem("image")}
                                                     onChange={(e) =>
                                                         setImage(e.target.value)
                                                     }
@@ -232,8 +256,10 @@ export default function ManageProduct() {
                                             <Form.Group className="mb-3">
                                                 <Form.Label>Quantity</Form.Label>
                                                 <Form.Control
+
                                                     type="text"
-                                                    defaultValue={sessionStorage.getItem("quantity")}
+                                                    required
+                                                    defaultValue={localStorage.getItem("quantity")}
                                                     onChange={(e) =>
                                                         setQuantity(e.target.value)
                                                     }
@@ -243,8 +269,9 @@ export default function ManageProduct() {
                                             <Form.Group className="mb-3">
                                                 <Form.Label>Category</Form.Label>
                                                 <Form.Control
+                                                    required
                                                     type="text"
-                                                    defaultValue={sessionStorage.getItem("category")}
+                                                    defaultValue={localStorage.getItem("category")}
                                                     onChange={(e) =>
                                                         setCategory(e.target.value)
                                                     }
@@ -256,7 +283,7 @@ export default function ManageProduct() {
                                             <Button variant="secondary" onClick={handleClose}>
                                                 Close
                                             </Button>
-                                            <Button variant="primary" type="submit" onClick={(e) => updateProduct(sessionStorage.getItem("id"), e)}>
+                                            <Button variant="primary" type="submit" onClick={(e) => updateProduct(localStorage.getItem("id"), e)}>
                                                 Update
                                             </Button>
                                         </Modal.Footer>
@@ -266,7 +293,7 @@ export default function ManageProduct() {
                             :
                             <>
                                 <Modal size="lg" show={show} onHide={handleClose}>
-                                    <Form>
+                                    <Form >
                                         <Modal.Header closeButton></Modal.Header>
                                         <Modal.Title>Add Product</Modal.Title>
                                         <Modal.Body>
@@ -313,15 +340,39 @@ export default function ManageProduct() {
                                                 />
                                             </Form.Group>
                                             <Form.Group className="mb-3">
-                                                <Form.Label>Category</Form.Label>
-                                                <Form.Control
-                                                    type="text"
-                                                    onChange={(e) =>
-                                                        setAddCategory(e.target.value)
-                                                    }
-                                                    placeholder="Enter Category"
-                                                />
+
+                                                <Box sx={{ minWidth: 120 }}>
+                                                    <FormControl fullWidth>
+                                                        <InputLabel>Category</InputLabel>
+                                                        <Select
+                                                            defaultValue={localStorage.getItem("category")}
+                                                            label="Category"
+
+                                                        >
+                                                            {
+                                                                allCategory?.map((category) => (
+                                                                    <MenuItem key={category.id} value={category.name}
+                                                                        onChange={(e) =>
+                                                                            setAddCategory(category.name)
+                                                                        }
+                                                                    >{category.name}</MenuItem>
+                                                                ))}
+                                                        </Select>
+                                                    </FormControl>
+                                                </Box>
                                             </Form.Group>
+                                            {error.Price && (
+                                                
+                                                <p style={{color: "red"}}> {error.Price} </p>
+                                            )}
+                                             {error.Category && (
+                                                
+                                                <p style={{color: "red"}}> {error.Category} </p>
+                                            )}
+                                             {error.productName && (
+                                                
+                                                <p style={{color: "red"}}> {error.ProductName} </p>
+                                            )}
                                         </Modal.Body>
                                         <Modal.Footer>
                                             <Button variant="secondary" onClick={handleClose}>
@@ -338,6 +389,6 @@ export default function ManageProduct() {
 
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 }

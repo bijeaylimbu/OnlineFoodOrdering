@@ -19,7 +19,7 @@ export default function ManageCategory() {
   const [showCreateBtn, setShowCreateBtn] = useState(true);
   const [editing, setEdit] = useState(false);
   const [adding, setAdd] = useState(false);
-  const [name, setName] = useState(sessionStorage.getItem("name"));
+  const [name, setName] = useState(localStorage.getItem("name"));
   const [addName, setAddName] = useState();
  
   const [error, setError] = useState(false);
@@ -132,7 +132,7 @@ export default function ManageCategory() {
                             <Button
                               variant="info"
                               title="Edit user details"
-                              onClick={() => onEdit(window.sessionStorage.setItem("name", category.name),
+                              onClick={() => onEdit(window.localStorage.setItem("name", category.name),
                               )}
                             >
                               <FaPencilAlt />
@@ -172,7 +172,7 @@ export default function ManageCategory() {
                           <Form.Control
                             type="text"
                             required
-                            defaultValue={sessionStorage.getItem("name")}
+                            defaultValue={localStorage.getItem("name")}
                             onChange={(e) =>
                               setName(e.target.value)
                             }
@@ -184,7 +184,7 @@ export default function ManageCategory() {
                         <Button variant="secondary" onClick={handleClose}>
                           Close
                         </Button>
-                        <Button variant="primary" type="submit" onClick={(e) => updateCategory(sessionStorage.getItem("id"), e)}>
+                        <Button variant="primary" type="submit" onClick={(e) => updateCategory(localStorage.getItem("id"), e)}>
                           Update
                         </Button>
                       </Modal.Footer>
