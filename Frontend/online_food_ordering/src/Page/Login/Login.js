@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 async function loginUser(credentials) {
-
   return fetch("https://localhost:7288/api/login", {
     method: 'POST',
     headers: {
@@ -45,12 +44,12 @@ async function loginUser(credentials) {
     body: JSON.stringify(credentials)
   })
     .then(res => res.json())
-    .then(result => {
-      if (result.email != null) {
-        window.localStorage.setItem("email", result.email);
-        window.localStorage.setItem("role", result.role);
-      }
-    })
+    // .then(result => {
+    //   if (result.email != null) {
+    //     window.localStorage.setItem("userEmail", result.email);
+    //     window.localStorage.setItem("role", result.role);
+    //   }
+    // })
 }
 
 export default function Login() {
@@ -58,13 +57,23 @@ export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
+  const [error, setError] = useState();
   const handleLogin = async e => {
     e.preventDefault();
     const response = await loginUser({
       email,
       password
-    });
-    navigate("/");
+    }).then(response => {
+      console.log(response)
+      if (response.email != null) {
+        window.localStorage.setItem("userEmail", response.email);
+            window.localStorage.setItem("role", response.role);
+        navigate("/");
+      }
+      else{
+        setError(response.errors)
+      }
+    })
   }
   return (
     <Grid container className={classes.root}>
@@ -100,6 +109,14 @@ export default function Login() {
               type="password"
               onChange={e => setPassword(e.target.value)}
             />
+            {error && (
+
+              <p style={{ color: "red" }}> {error?.Email} </p>
+            )}
+            {error && (
+
+              <p style={{ color: "red" }}> {error?.Password} </p>
+            )}
             <Button
               type="submit"
               fullWidth

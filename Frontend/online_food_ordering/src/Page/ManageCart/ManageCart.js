@@ -16,7 +16,7 @@ export default function ManageCart() {
     const [cart, setCart] = useState([]);
     const [open, setOpen] = useState(false);
     const getData = async () => {
-        const response = await fetch(`https://localhost:7288/api/get-all-cart?email=${localStorage.getItem("email")}`)
+        const response = await fetch(`https://localhost:7288/api/get-all-cart?email=${localStorage.getItem("userEmail")}`)
             .then((response) => response.json());
         setCart(response);
     }

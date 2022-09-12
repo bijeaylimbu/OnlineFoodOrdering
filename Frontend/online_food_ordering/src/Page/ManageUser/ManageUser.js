@@ -34,8 +34,7 @@ export default function ManageUser() {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
   const [phone, setPhone] = useState();
- 
-  const [error, setError] = useState(false);
+  const [error, setError] = useState();
   const handleClose = () => {
     setShow(false);
   };
@@ -78,8 +77,13 @@ export default function ManageUser() {
       email,
       role
     })
-      .then(res => console.log(res))
-      .catch((error) => setEdit(true))
+      .then(response => {
+        if (response.data == 202) {
+          window.location.reload();
+        }
+      }).catch((error) => {
+        setError(error.response.data.errors)
+      })
   }
 
   const addUser = (e) => {
@@ -94,15 +98,27 @@ export default function ManageUser() {
       confirmPassword: confirmPassword,
       phoneNumber: phone
 
+    }).then(response => {
+      if (response.data == 201) {
+        window.location.reload();
+      }
+    }).catch((error) => {
+      setError(error.response.data.errors)
     })
-    window.location.reload();
   }
 
   const deleteUser = (emailId) => {
     setShow(false);
     const response = axios.delete(`https://localhost:7288/api/delete-user?email=${emailId}`
-    )
-    window.location.reload();
+    ).then(response => {
+      if (response.data == 202) {
+        window.location.reload();
+      }
+    }).catch((error) => {
+      setError(error.response.data.errors)
+    })
+    
+    // window.location.reload();
   }
   return (
     <>
@@ -246,6 +262,19 @@ export default function ManageUser() {
                           />
                         </Form.Group>
                       </Modal.Body>
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.Email} </p>
+                      )}
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.FirstName} </p>
+                      )}
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.LastName} </p>
+                      )}
+
                       <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                           Close
@@ -337,6 +366,30 @@ export default function ManageUser() {
                           />
                         </Form.Group>
                       </Modal.Body>
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.Email} </p>
+                      )}
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.FirstName} </p>
+                      )}
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.LastName} </p>
+                      )}
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.PhoneNumber} </p>
+                      )}
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.Password} </p>
+                      )}
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.ConfirmPassword} </p>
+                      )}
                       <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                           Close

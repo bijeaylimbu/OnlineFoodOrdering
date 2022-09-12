@@ -19,12 +19,7 @@ public class AuthController: ControllerBase
    public async Task<int> Register([FromBody] Registration registration)
    {
       var result = await authRepository.NewRegistration(registration);
-      if (result.Succeeded)
-      {
-         return StatusCodes.Status201Created;
-      }
-
-      return StatusCodes.Status501NotImplemented;
+      return StatusCodes.Status201Created;
    }
 
    [HttpPost]

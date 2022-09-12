@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function PurchaseHistory(){
     const [cart, setCart] = useState([]);
     const getData = async () => {
-        const response = await fetch(`https://localhost:7288/api/get-all-cart?email=${localStorage.getItem("email")}`)
+        const response = await fetch(`https://localhost:7288/api/get-all-cart?email=${localStorage.getItem("userEmail")}`)
             .then((response) => response.json());
         setCart(response);
     }

@@ -62,8 +62,7 @@ export default function ManageCategory() {
     const response = axios.put(`https://localhost:7288/api/updated-category?id=${id}`, {
       name
     })
-      .then(res => console.log(res))
-      .catch((error) => setEdit(true))
+    window.location.reload();
   }
 
   const addCategory = (e) => {
@@ -79,7 +78,7 @@ export default function ManageCategory() {
     setShow(false);
     const response = axios.delete(`https://localhost:7288/api/delete-category?categoryId=${id}`
     )
-    // window.location.reload();
+    window.location.reload();
   }
   return (
     <>
