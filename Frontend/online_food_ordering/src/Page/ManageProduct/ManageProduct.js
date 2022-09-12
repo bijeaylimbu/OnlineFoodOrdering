@@ -39,7 +39,7 @@ export default function ManageProduct() {
     const [allCategory, setAllCategory] = useState();
     const [rating, setRating] = useState(0);
     const [error, setError] = useState([]);
-    console.log(addCategory)
+    console.log(error)
     const handleClose = () => {
         setShow(false);
     };
@@ -90,26 +90,33 @@ export default function ManageProduct() {
             quantity,
             category,
             rating
+        }).then(response => {
+            if (response.data == 202) {
+                window.location.reload();
+            }
+        }).catch((error) => {
+            setError(error.response.data.errors)
         })
     }
 
     const addProduct = (e) => {
         e.preventDefault();
         setShow(true);
-        const response = axios.post("https://localhost:7288/api/add-product ", {
+        axios.post("https://localhost:7288/api/add-product ", {
             productName: addProductName,
             price: addPrice,
             image: addImage,
             quantity: addQuantity,
             category: addCategory,
             rating: rating
-        }).then(response => {
-            if (response.data == 200) {
-                window.location.reload();
-            }
-        }).catch((error) => {
-            setError(error.response.data.errors)
         })
+            .then(response => {
+                if (response.data == 201) {
+                    window.location.reload();
+                }
+            }).catch((error) => {
+                setError(error.response.data.errors)
+            })
     }
 
     const deleteProduct = (id) => {
@@ -118,7 +125,12 @@ export default function ManageProduct() {
         )
         window.location.reload();
     }
-
+    const handleChange = (event) => {
+        setAddCategory(event.target.value);
+    };
+    const handleChangeCategory = (event) => {
+        setCategory(event.target.value);
+    };
     return (
         <Container fluid="md">
             <Row>
@@ -267,18 +279,39 @@ export default function ManageProduct() {
                                                 />
                                             </Form.Group>
                                             <Form.Group className="mb-3">
-                                                <Form.Label>Category</Form.Label>
-                                                <Form.Control
-                                                    required
-                                                    type="text"
-                                                    defaultValue={localStorage.getItem("category")}
-                                                    onChange={(e) =>
-                                                        setCategory(e.target.value)
-                                                    }
-                                                    placeholder="Enter Qunatity"
-                                                />
+
+                                                <Box sx={{ minWidth: 120 }}>
+                                                    <FormControl fullWidth>
+                                                        <InputLabel>Category</InputLabel>
+                                                        <Select
+                                                            label="Category"
+                                                            onChange={
+                                                                handleChangeCategory
+                                                                // setAddCategory()
+                                                            }
+                                                        >
+                                                            {
+                                                                allCategory?.map((category) => (
+                                                                    <MenuItem key={category.id} value={category.name}
+                                                                    >{category.name}</MenuItem>
+                                                                ))}
+                                                        </Select>
+                                                    </FormControl>
+                                                </Box>
                                             </Form.Group>
                                         </Modal.Body>
+                                        {error && (
+
+                                            <p style={{ color: "red" }}> {error?.Price} </p>
+                                        )}
+                                        {error && (
+
+                                            <p style={{ color: "red" }}> {error?.Category} </p>
+                                        )}
+                                        {error && (
+
+                                            <p style={{ color: "red" }}> {error?.ProductName} </p>
+                                        )}
                                         <Modal.Footer>
                                             <Button variant="secondary" onClick={handleClose}>
                                                 Close
@@ -345,33 +378,32 @@ export default function ManageProduct() {
                                                     <FormControl fullWidth>
                                                         <InputLabel>Category</InputLabel>
                                                         <Select
-                                                            defaultValue={localStorage.getItem("category")}
                                                             label="Category"
-
+                                                            onChange={
+                                                                handleChange
+                                                                // setAddCategory()
+                                                            }
                                                         >
                                                             {
                                                                 allCategory?.map((category) => (
                                                                     <MenuItem key={category.id} value={category.name}
-                                                                        onChange={(e) =>
-                                                                            setAddCategory(category.name)
-                                                                        }
                                                                     >{category.name}</MenuItem>
                                                                 ))}
                                                         </Select>
                                                     </FormControl>
                                                 </Box>
                                             </Form.Group>
-                                            {error.Price && (
-                                                
-                                                <p style={{color: "red"}}> {error.Price} </p>
+                                            {error && (
+
+                                                <p style={{ color: "red" }}> {error?.Price} </p>
                                             )}
-                                             {error.Category && (
-                                                
-                                                <p style={{color: "red"}}> {error.Category} </p>
+                                            {error && (
+
+                                                <p style={{ color: "red" }}> {error?.Category} </p>
                                             )}
-                                             {error.productName && (
-                                                
-                                                <p style={{color: "red"}}> {error.ProductName} </p>
+                                            {error && (
+
+                                                <p style={{ color: "red" }}> {error?.ProductName} </p>
                                             )}
                                         </Modal.Body>
                                         <Modal.Footer>
