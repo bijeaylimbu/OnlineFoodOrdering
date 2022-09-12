@@ -48,7 +48,7 @@ export default function HomePage() {
   }, [])
 
   const logout = () => {
-    localStorage.removeItem('email');
+    localStorage.removeItem('userEmail');
     localStorage.removeItem('role');
     navigate("/");
   };
@@ -88,7 +88,7 @@ export default function HomePage() {
               </Box>
             </Box>
             {
-              (window.localStorage.getItem("email") !== null && window.localStorage.getItem("email") !== undefined)
+              (window.localStorage.getItem("userEmail") !== null && window.localStorage.getItem("userEmail") !== undefined)
                 ?
                 <>
                   <Box sx={{ flexGrow: 0 }}>
