@@ -121,9 +121,12 @@ export default function ManageProduct() {
 
     const deleteProduct = (id) => {
         setShow(false);
-        const response = axios.delete(`https://localhost:7288/api/delete-product?id=${id}`
-        )
-        window.location.reload();
+        const response = axios.delete(`https://localhost:7288/api/delete-product?productId=${id}`
+        ).then(response => {
+            if (response.data == 202) {
+                window.location.reload();
+            }
+        })
     }
     const handleChange = (event) => {
         setAddCategory(event.target.value);
@@ -312,6 +315,10 @@ export default function ManageProduct() {
 
                                             <p style={{ color: "red" }}> {error?.ProductName} </p>
                                         )}
+                                        {error && (
+
+                                            <p style={{ color: "red" }}> {error?.Image} </p>
+                                        )}
                                         <Modal.Footer>
                                             <Button variant="secondary" onClick={handleClose}>
                                                 Close
@@ -404,6 +411,10 @@ export default function ManageProduct() {
                                             {error && (
 
                                                 <p style={{ color: "red" }}> {error?.ProductName} </p>
+                                            )}
+                                            {error && (
+
+                                                <p style={{ color: "red" }}> {error?.Image} </p>
                                             )}
                                         </Modal.Body>
                                         <Modal.Footer>

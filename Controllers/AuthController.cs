@@ -58,4 +58,12 @@ public class AuthController: ControllerBase
          var user = await authRepository.DeleteUserAsync(email);
          return user;
       }
+      
+      [HttpGet]
+      [Route("get-user-by-email")]
+      public async Task<ApplicationUser> UpdateUserAsync(string email)
+      {
+         var user = await authRepository.FindByEmailAsync(email);
+         return user;
+      }
 }

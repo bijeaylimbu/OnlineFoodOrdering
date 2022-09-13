@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core";
 import axios from "axios";
 import { AiFillDelete } from "react-icons/ai";
 import { BiPurchaseTag } from "react-icons/bi";
-import { IconButton } from '@mui/material';
+import { IconButton, Table } from '@mui/material';
 import { Link } from "react-router-dom";
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -27,9 +27,11 @@ export default function ManageCart() {
     const deleteCartItem = (id) => {
         // setOpen(true);
         const response = axios.delete(`https://localhost:7288/api/delete-cart-item?cartId=${id}`
-        )
-        setOpen(false);
-        window.location.reload();
+        ).then(response => {
+            if (response.data == 202) {
+                window.location.reload();
+            }
+        })
     }
     const handleClickOpen = () => {
         setOpen(true);
@@ -46,7 +48,69 @@ export default function ManageCart() {
                 </Link>
             </div>
             <div>
-                {/* <ul className="cart-items"> */}
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th> Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Remove From Cart</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {cart.length > 0 ? (
+                            cart.map((cart, index) => (
+                                <tr key={index}>
+                                    <td >{cart.productName}</td>
+                                    <td><img src={cart.image} /></td>
+                                    <td>{cart.price}</td>
+                                    <td>
+                                        <AiFillDelete onClick={()=>handleClickOpen()} />
+                                    </td>
+                                    <td>
+                                        <Link
+                                            to="/payment"
+                                            state={{ item: cart }}
+                                            style={{ textDecoration: 'none', color: "black" }}>
+                                            <BiPurchaseTag />
+                                        </Link>
+                                        <Dialog
+                                            open={open}
+                                            onClose={handleClose}
+                                            aria-labelledby="alert-dialog-title"
+                                            aria-describedby="alert-dialog-description"
+                                        >
+                                            <DialogTitle id="alert-dialog-title">
+                                                {"Use Google's location service?"}
+                                            </DialogTitle>
+                                            <DialogContent>
+                                                <DialogContentText id="alert-dialog-description">
+                                                    Are you sure you wants to delete this product
+                                                </DialogContentText>
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button onClick={handleClose}>Disagree</Button>
+                                                <Button onClick={() => deleteCartItem(cart.id)}>
+                                                    Agree
+                                                </Button>
+                                            </DialogActions>
+                                        </Dialog>
+                                    </td>
+                                </tr>
+
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan={6} className="text-center">
+                                    No Category found.
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
+
+                {/* <ul className="cart-items">
                 {cart.map((item) => (
                     <div className="items-info">
                         <div className="product-img">
@@ -92,7 +156,7 @@ export default function ManageCart() {
                             </DialogActions>
                         </Dialog>
                     </div>
-                ))}
+                ))} */}
             </div>
         </>
     );

@@ -1,16 +1,7 @@
-.card{
-    border: 2px solid black;
+.rest-info {
     text-align: center;
-    padding: 20px;
-}
-.card img{
-    width: 160px;
-    border-radius: 50%;
-}
-.card button {
-    margin-bottom: 20px;
-}
-.card .salary {
-    color: indigo;
-    text-transform: uppercase;
-}
+    margin-bottom: 5%;
+  }
+  .profile-pic {
+    width: 45%;
+  }

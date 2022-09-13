@@ -72,18 +72,16 @@ export default function HomePage() {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography variant="h6" noWrap component="div" sx={{ mr: 2 }}>
-              Online Food Ordering
+              <Link to="/" style={{ textDecoration: 'none', color: "white" }}>
+                Online Food Ordering
+              </Link>
             </Typography>
             <Box sx={{ flexGrow: 1, display: "flex" }} m={3} >
               <Box sx={{ display: "flex" }}>
                 <Button sx={{ my: 2, color: "white", display: "block" }}>
-                  Products
-                </Button>
-                <Button sx={{ my: 2, color: "white", display: "block" }}>
-                  About Us
-                </Button>
-                <Button sx={{ my: 2, color: "white", display: "block" }}>
-                  Contact Us
+                  <Link to="/" style={{ textDecoration: 'none', color: "white" }}>
+                    Products
+                  </Link>
                 </Button>
               </Box>
             </Box>
@@ -118,23 +116,29 @@ export default function HomePage() {
                           <Typography textAlign="center"> Profile</Typography>
                         </Link>
                       </MenuItem>
-                      <MenuItem onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center"> Dashboard</Typography>
-                      </MenuItem>
-                      <MenuItem onClick={handleCloseUserMenu}>
-                        <Link to="/all-user" style={{ textDecoration: 'none', color: "black" }}>
-                          <Typography textAlign="center"> Manage User</Typography>
-                        </Link>
-                      </MenuItem>
+
+                      {(localStorage.getItem("role") === "Admin") ?
+
+                        <>
+                          <MenuItem onClick={handleCloseUserMenu}>
+                            <Link to="/all-user" style={{ textDecoration: 'none', color: "black" }}>
+                              <Typography textAlign="center"> Manage User</Typography>
+                            </Link>
+                          </MenuItem>
+                          <MenuItem onClick={handleCloseUserMenu}>
+                            <Link to="/manage-category" style={{ textDecoration: 'none', color: "black" }}>
+                              <Typography textAlign="center"> Manage Category</Typography>
+                            </Link>
+                          </MenuItem>
+                        </>
+                        :
+                        <>
+                        </>
+                      }
 
                       <MenuItem onClick={handleCloseUserMenu}>
                         <Link to="/manage-product" style={{ textDecoration: 'none', color: "black" }}>
                           <Typography textAlign="center"> Manage Product</Typography>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleCloseUserMenu}>
-                        <Link to="/manage-category" style={{ textDecoration: 'none', color: "black" }}>
-                          <Typography textAlign="center"> Manage Category</Typography>
                         </Link>
                       </MenuItem>
 

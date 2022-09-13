@@ -14,4 +14,6 @@ public interface IAuthRepository
     Task<int> UpdateUserAsync(string email, ApplicationUser userModel);
     
     Task<int> DeleteUserAsync(string email);
+    
+    Task<ApplicationUser> FindByEmailAsync(string email);
 }

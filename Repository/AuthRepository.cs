@@ -80,4 +80,11 @@ public class AuthRepository: IAuthRepository
         await userManager.DeleteAsync(user);
         return StatusCodes.Status202Accepted;
     }
+
+    public async Task<ApplicationUser> FindByEmailAsync(string email)
+    {
+        var user = await userManager.FindByEmailAsync(email);
+        return user;
+
+    }
 }

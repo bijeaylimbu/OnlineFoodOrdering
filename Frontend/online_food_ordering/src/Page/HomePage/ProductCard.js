@@ -32,7 +32,7 @@ const ProductCard = ({ data }) => {
     const addToCart = (e) => {
         e.preventDefault();
         const response = axios.post("https://localhost:7288/api/add-cart ", {
-            user: localStorage.getItem("email"),
+            user: localStorage.getItem("userEmail"),
             productId: productId,
             quantity: quantity,
             price: price,

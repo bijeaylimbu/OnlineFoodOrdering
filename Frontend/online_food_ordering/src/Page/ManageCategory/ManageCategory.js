@@ -1,28 +1,27 @@
 import React, { useState } from "react";
 import {
-    Button,
-    Card,
-    Col,
-    Container,
-    Form,
-    Modal,
-    Row,
-    Table,
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Modal,
+  Row,
+  Table,
 } from "react-bootstrap";
 import { Toggle } from "rsuite";
 import { FaPencilAlt, FaPlus, FaTrashAlt } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
 export default function ManageCategory() {
-    const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [show, setShow] = useState(false);
   const [showCreateBtn, setShowCreateBtn] = useState(true);
   const [editing, setEdit] = useState(false);
   const [adding, setAdd] = useState(false);
-  const [name, setName] = useState(localStorage.getItem("name"));
+  const [name, setName] = useState();
   const [addName, setAddName] = useState();
- 
-  const [error, setError] = useState(false);
+  const [error, setError]=useState();
   const handleClose = () => {
     setShow(false);
   };
@@ -61,24 +60,41 @@ export default function ManageCategory() {
     setShow(true);
     const response = axios.put(`https://localhost:7288/api/updated-category?id=${id}`, {
       name
-    })
-    window.location.reload();
+    }).then(response => {
+      if (response.data == 202) {
+          window.location.reload();
+      }
+  }).catch((error) => {
+      setError(error.response.data.errors)
+  })
+    // window.location.reload();
   }
 
   const addCategory = (e) => {
     e.preventDefault();
     setShow(true);
-    const response = axios.post("https://localhost:7288/api/add-category ", {
+    const response = axios.post("https://localhost:7288/api/add-category", {
       name: name,
+    }).then(response => {
+      if (response.data == 201) {
+        window.location.reload();
+      }
+    }).catch((error) => {
+      setError(error.response.data.errors)
     })
-    window.location.reload();
   }
 
   const deleteCategory = (id) => {
     setShow(false);
     const response = axios.delete(`https://localhost:7288/api/delete-category?categoryId=${id}`
-    )
-    window.location.reload();
+    ).then(response => {
+      if (response.data == 202) {
+          window.location.reload();
+      }
+  }).catch((error) => {
+      setError(error.response.data.errors)
+  })
+    // window.location.reload();
   }
   return (
     <>
@@ -126,13 +142,13 @@ export default function ManageCategory() {
                         <tr key={index}>
                           <td>{category.id}</td>
                           <td>{category.name}</td>
-                     
+
                           <td>
                             <Button
                               variant="info"
                               title="Edit user details"
-                              onClick={() => onEdit(window.localStorage.setItem("name", category.name),
-                              )}
+                              onClick={() => {window.localStorage.setItem("categoryId", category.id);  onEdit(window.localStorage.setItem("name", category.name),
+                              )}}
                             >
                               <FaPencilAlt />
                             </Button>{" "}
@@ -175,7 +191,7 @@ export default function ManageCategory() {
                             onChange={(e) =>
                               setName(e.target.value)
                             }
-                            placeholder="First Name"
+                            placeholder="Category Name"
                           />
                         </Form.Group>
                       </Modal.Body>
@@ -183,7 +199,7 @@ export default function ManageCategory() {
                         <Button variant="secondary" onClick={handleClose}>
                           Close
                         </Button>
-                        <Button variant="primary" type="submit" onClick={(e) => updateCategory(localStorage.getItem("id"), e)}>
+                        <Button variant="primary" type="submit" onClick={(e) => updateCategory(localStorage.getItem("categoryId"), e)}>
                           Update
                         </Button>
                       </Modal.Footer>
@@ -203,12 +219,16 @@ export default function ManageCategory() {
                             type="text"
                             required
                             onChange={(e) =>
-                              setAddName(e.target.value)
+                              setName(e.target.value)
                             }
                             placeholder="Category Name"
                           />
                         </Form.Group>
                       </Modal.Body>
+                      {error && (
+
+                        <p style={{ color: "red" }}> {error?.Image} </p>
+                      )}
                       <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                           Close

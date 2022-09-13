@@ -6,31 +6,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e595fbc-4296-4e58-8ade-978fa1116bfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a/storage_v2/_src_/database/online_food_ordering.qc8xrA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/dataSources/0d83fa2d-44aa-4caa-b0e6-d89b88188c1a/storage_v2/_src_/database/online_food_ordering.qc8xrA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineFoodOrdering.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CartController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/HomePage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/ProductCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/HomePage/ProductCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageCart/ManageCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageCart/ManageCart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageCart/ManageCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageCart/ManageCart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageCategory/ManageCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageCategory/ManageCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageProduct/ManageProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageProduct/ManageProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageUser/ManageUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/ManageUser/ManageUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/OnlineFoodOrderingDBContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/OnlineFoodOrderingDBContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/CartItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Model/CartItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/Payment/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/Payment/Payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/UserProfile/UserProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/UserProfile/UserProfile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/UserProfile/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/Page/UserProfile/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/online_food_ordering/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/online_food_ordering/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IAuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IAuthRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/AuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AuthRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Frontend/online_food_ordering/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/OnlineFoodOrdering.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/OnlineFoodOrdering.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/OnlineFoodOrdering.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +158,9 @@
       <workItem from="1662501033011" duration="92000" />
       <workItem from="1662615836171" duration="2382000" />
       <workItem from="1662768436011" duration="4137000" />
-      <workItem from="1662866604812" duration="13628000" />
+      <workItem from="1662866604812" duration="13785000" />
+      <workItem from="1663017135253" duration="4007000" />
+      <workItem from="1663064479921" duration="6988000" />
     </task>
     <task id="LOCAL-00001" summary="add pushed">
       <created>1661351112229</created>
@@ -241,7 +246,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662469977131</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added some column and working on authentication">
+      <created>1662931086975</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1662931086976</updated>
+    </task>
+    <task id="LOCAL-00014" summary="unsaved file">
+      <created>1663017193968</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663017193968</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +292,8 @@
     <MESSAGE value="adding ProductName in model" />
     <MESSAGE value="updating" />
     <MESSAGE value="working" />
-    <option name="LAST_COMMIT_MESSAGE" value="working" />
+    <MESSAGE value="Added some column and working on authentication" />
+    <MESSAGE value="unsaved file" />
+    <option name="LAST_COMMIT_MESSAGE" value="unsaved file" />
   </component>
 </project>
