@@ -14,7 +14,10 @@ import { FaPencilAlt, FaPlus, FaTrashAlt } from "react-icons/fa";
 import "../ManageUser/ManageUser.css"
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
-
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 export default function ManageUser() {
 
   const [users, setUsers] = useState([]);
@@ -117,7 +120,7 @@ export default function ManageUser() {
     }).catch((error) => {
       setError(error.response.data.errors)
     })
-    
+
     // window.location.reload();
   }
   return (
@@ -250,17 +253,20 @@ export default function ManageUser() {
                             placeholder="Enter Email"
                           />
                         </Form.Group>
-                        <Form.Group className="mb-3">
-                          <Form.Label>Role</Form.Label>
-                          <Form.Control
-                            type="text"
+                        <FormControl fullWidth>
+                          <InputLabel>Category</InputLabel>
+                          <Select
+                            label="Category"
                             defaultValue={localStorage.getItem("role")}
                             onChange={(e) =>
                               setRole(e.target.value)
                             }
-                            placeholder="Enter Role"
-                          />
-                        </Form.Group>
+                          >
+                            <MenuItem value="Admin" >Admin</MenuItem>
+                            <MenuItem value="Viewer" >Viewer</MenuItem>
+
+                          </Select>
+                        </FormControl>
                       </Modal.Body>
                       {error && (
 
@@ -335,16 +341,19 @@ export default function ManageUser() {
                             placeholder="Enter Email"
                           />
                         </Form.Group>
-                        <Form.Group className="mb-3">
-                          <Form.Label>Role</Form.Label>
-                          <Form.Control
-                            type="text"
+                        <FormControl fullWidth>
+                          <InputLabel>Category</InputLabel>
+                          <Select
+                            label="Category"
                             onChange={(e) =>
-                              setAddRole(e.target.value)
+                              setRole(e.target.value)
                             }
-                            placeholder="Enter Role"
-                          />
-                        </Form.Group>
+                          >
+                            <MenuItem value="Admin" >Admin</MenuItem>
+                            <MenuItem value="Viewer" >Viewer</MenuItem>
+
+                          </Select>
+                        </FormControl>
                         <Form.Group className="mb-3">
                           <Form.Label>Password</Form.Label>
                           <Form.Control
